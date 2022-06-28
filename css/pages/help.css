@@ -1,0 +1,48 @@
+main p {
+    margin: 0 0 20px;
+    line-height: 1;
+}
+
+form.form {
+    display: flex;
+    flex-direction: column;
+}
+
+form.form label {
+    margin: 5px 0 0;
+}
+
+form.form input {
+    height: 40px;
+}
+
+form.form textarea,
+input {
+    border-radius: 6px;
+    width: 340px;
+}
+
+div.inputs {
+    display: flex;
+    justify-content: center;
+}
+
+.button {
+    border: 0px;
+    background-color: #00594c;
+    color: white;
+    border-radius: 8px;
+    padding: 10px;
+    width: fit-content;
+    margin: 10px 3px 0px;
+}
+
+
+/*se realizo para cuando este la pantalla maximizada se vea como el resultado del ejemplo del pdf*/
+
+@media (min-width: 1001px) {
+    main.help {
+        width: 83%;
+        margin-left: 9%;
+    }
+}

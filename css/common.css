@@ -1,0 +1,207 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', 'sans-serif';
+}
+
+ :root {
+    /* Declaro variables CSS con colores principales */
+    --color-theme: #00594c;
+    --color-active: #5df2d6;
+    --color-back-active: #04957d;
+    --color-gradient: linear-gradient(to right, var(--color-theme), var(--color-back-active));
+}
+
+body {
+    height: 100%;
+    width: 100%;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    border-radius: 0 0 30px 30px;
+    border-bottom: var(--color-active) solid 2px;
+    background: linear-gradient(to right, var(--color-theme), var(--color-back-active));
+}
+
+nav>ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+nav li a {
+    display: block;
+    padding: 16px 12px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: bold;
+    color: var(--color-active);
+}
+
+nav li.current-page a {
+    color: var(--color-theme);
+    background-color: var(--color-active);
+    pointer-events: none;
+    border-radius: 8px 8px 0 0;
+}
+
+main {
+    margin-top: 120px;
+    overflow: auto;
+    padding: 16px;
+    padding-bottom: 60px;
+    height: calc(100% - 120px);
+}
+
+h1 {
+    text-align: center;
+    margin: 0;
+    color: white;
+}
+
+h1>img {
+    width: 70px;
+    vertical-align: middle;
+}
+
+h2 {
+    color: var(--color-theme);
+    margin: 16px 0;
+    text-align: center;
+}
+
+main section {
+    display: flex;
+    justify-content: space-around;
+}
+
+footer {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-top: var(--color-active) solid 2px;
+    background: linear-gradient(to right, var(--color-theme), var(--color-back-active));
+}
+
+footer p {
+    font-size: small;
+    color: white;
+}
+
+button,
+a {
+    /*evita seleccionar texto elemento*/
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.mesages {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 22px;
+}
+
+.mesages p {
+    font-size: 14px;
+    text-align: center;
+    color: white;
+    border-radius: 15px;
+    margin: 10px;
+    padding: 12px 7px;
+    width: 450px;
+    line-height: 1;
+}
+
+#succes {
+    display: none;
+    background-color: #28a745;
+}
+
+#error {
+    display: none;
+    background-color: #dc3545;
+}
+
+#found {
+    display: none;
+    background-color: #ffc107;
+}
+
+#empty {
+    display: block;
+    background-color: #dc3545;
+}
+
+#errorMail {
+    display: none;
+    background-color: #dc3545;
+}
+
+#vacio {
+    display: none;
+    background-color: #dc3545;
+}
+
+#enviado {
+    display: none;
+    background-color: #28a745;
+}
+
+
+/* Media Query: Estilos a aplicar sólo en pantallas mayores a 400px */
+
+@media (min-width: 400px) {
+    main {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+    footer {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+}
+
+
+/*----------------Loader--------------------------*/
+
+.loader {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--color-theme);
+    box-shadow: 0 0 0 0 var(--color-theme);
+    animation: pl2 1.5s infinite linear;
+    position: relative;
+    display: none;
+    margin-top: 50px;
+}
+
+.loader:before,
+.loader:after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    box-shadow: 0 0 0 0 var(--color-theme);
+    animation: inherit;
+    animation-delay: -0.5s;
+}
+
+.loader:after {
+    animation-delay: -1s;
+}
+
+@keyframes pl2 {
+    100% {
+        box-shadow: 0 0 0 40px rgba(0, 0, 0, 0)
+    }
+}
